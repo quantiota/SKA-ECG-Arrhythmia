@@ -27,6 +27,13 @@ $$
 $$
 
 One value per record: [`results/tau_H.csv`](results/tau_H.csv), computed by [`tau_h.py`](tau_h.py).
+
+The cycles to saturation, N_H, remove the heart rate from τ_H: τ_H divided by T_c, the mean cycle time
+of the run (its total time divided by its number of cycles). N_H has no unit:
+
+$$
+N_H = \frac{\tau_H}{T_c}
+$$
 The entropy of each run is in `results/<record>/figures/`, to check the saturation.
 
 ## Records
@@ -89,9 +96,9 @@ ska_ecg_vr_template_tagged.html     the same, steps into or out of a missing wav
 ska_ecg_vr_template_dt.html         the same, vertical axis Δt (ms) instead of P
 ska_ecg_vr_template_label.html      the tagged cube with the MIT-BIH labels, click a point to read it
 plot_entropy.py                     the entropy figure of each run (H and P along the steps)
-tau_h.py                            τ_H of each record, from the run CSVs
+tau_h.py                            τ_H and N_H of each record, from the run CSVs
 results/
-├── tau_H.csv                       τ_H and τ of each transition, one row per record
+├── tau_H.csv                       τ_H, τ of each transition, T_c and N_H, one row per record
 └── <record>/
     ├── ska_<record>_runs.csv       one row per step
     └── figures/                    the entropy figure
